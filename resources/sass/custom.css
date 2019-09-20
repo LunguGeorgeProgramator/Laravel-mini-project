@@ -1,0 +1,76 @@
+.removePaddingRight{
+    text-align: right;
+    padding-right: 0;
+}
+
+.removePaddingCenter{
+    text-align: center;
+    padding-right: 0;
+}
+
+.text-wrap {
+    word-wrap: break-word;
+    overflow: hidden; 
+  }
+
+.background {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* background: no-repeat center center fixed; */
+}
+.textColor {
+    color: black;
+}
+.removeAll{
+    border-radius: 0; 
+    margin: 0; 
+    padding: 0; 
+}
+.removeBorderBottom{
+    border-bottom: 0; 
+}
+.removePaddingBottom{
+    padding-bottom: 0; 
+}
+.noPadding{
+    padding: 0;
+}
+.noMargin{
+    margin: 0;
+}
+
+.my-container a{
+    position: relative;
+}
+
+.my-container p{
+    position: relative;
+}
+.my-container spam{
+    position: relative;
+}
+.my-container h5{
+    position: relative;
+}
+.my-container {
+    position: relative;
+    overflow: hidden;
+    /* font-weight: bold; */
+    color: #000000;
+    z-index: 2;
+}
+/* .my-container h1 {
+    padding: 200px;
+
+}  */
+.my-container img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
