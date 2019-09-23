@@ -74,3 +74,11 @@
     opacity: 0.5;
     filter: alpha(opacity=50); /* For IE8 and earlier */
 }
+
+#currentPage[title]::before {
+    content: attr(title);
+    /* then add some nice styling as needed, eg: */
+    display: block;
+    font-weight: bold;
+    padding: 4px;
+}

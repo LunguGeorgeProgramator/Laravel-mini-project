@@ -40,13 +40,13 @@
         </div>
     </div>
 </div>
- 
-@endsection
 
 <script type="module">
-    import { categoryObject } from '{{ asset('js/exports.js') }}';
+    import { ajax_call } from '{{ asset('public/js/exports.js') }}';
     // console.log(categoryObject); // call js content for this page
     @if ($errors->any())
-        categoryObject.popErrorMessage('{{ implode('', $errors->all()) }}');
+        ajax_call();
     @endif
 </script>
+
+@endsection

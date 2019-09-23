@@ -6,6 +6,7 @@ use App\Post;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
@@ -76,7 +77,7 @@ class PostsController extends Controller
     public function show(Post $post)
     {
         // dd(Post::findOrFail($post->id));;
-        return view('posts.show', compact('post'));
+        return view('posts.show', ['post' => $post, 'logged' => Auth::check()]);
     }
 
     /**
@@ -108,7 +109,7 @@ class PostsController extends Controller
         ]);
         $post_data['user_id'] = Auth::user()->id;
         $post->update($post_data);
-        return redirect('/posts');
+        return redirect()->route('posts.show', ['post' => $post, 'logged' => Auth::check()]);
     }
 
     /**
@@ -121,5 +122,15 @@ class PostsController extends Controller
     {
         $post->delete();
         return redirect('/posts');
+    }
+
+    public function search(Request $request){
+        $query = $request->input('query');
+        $results = Post::select()
+                        ->where('title', 'like', '%'.$query.'%')
+                        ->orWhere('description', 'like', '%'.$query.'%')
+                        ->paginate(5);
+		$results->withPath('?query='.$query);
+        return $results;
     }
 }

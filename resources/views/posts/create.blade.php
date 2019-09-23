@@ -10,7 +10,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Post title.</label>
-                            <input type="title" class="form-control" name="title" id="FormControlInput" value="" placeholder="Post title" />
+                            <input type="title" class="form-control" name="title" id="FormControlInput" value="{{ old('title') }}" placeholder="Post title" />
                             @error('title')
                                 <span class="text-danger">
                                     <strong>{{ $message }}</strong>
@@ -19,7 +19,7 @@
                         </div>
                         <div class="form-group">
                             <label for="FormControlTextarea">Post description.</label>
-                            <textarea class="form-control" name="description" id="FormControlTextarea" rows="3" placeholder="Post description."></textarea>
+                            <textarea class="form-control" name="description" id="FormControlTextarea" rows="3" placeholder="Post description.">{{ old('description') }}</textarea>
                             @error('description')
                                 <span class="text-danger">
                                     <strong>{{ $message }}</strong>

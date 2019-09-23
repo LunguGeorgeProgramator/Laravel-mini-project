@@ -7,7 +7,7 @@
         <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <form method="POST" action="{{ route('posts.update', $post->id) }}">
-                        @method('PUT')
+                        @method('PATCH')
                         @csrf
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Post title.</label>
@@ -29,7 +29,6 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>
-
                     <form method="POST" action="{{ route('posts.destroy', $post->id) }}" class="float-right ml-2">
                         {{-- method_field('DELETE') --}}
                         @method('DELETE')

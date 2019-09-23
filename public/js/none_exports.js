@@ -8,8 +8,6 @@ function popErrorMessage(error_str){
 }
 
 function setHeight(id_desc, id_buttons){
-    // alert('sssss');
-    // console.log('aaa', id_str);
     const buttons_div = document.getElementById(id_buttons);
     const desc_div = document.getElementById(id_desc);
     buttons_div.style.marginTop = desc_div.offsetHeight - buttons_div.offsetHeight;

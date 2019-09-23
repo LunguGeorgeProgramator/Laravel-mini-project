@@ -33,6 +33,21 @@ class LoginController extends Controller
         return '/profile/'.Auth::user()->id;
     }
 
+    // redirect back after login on the same page
+    public function showLoginForm()
+    {
+        if(!session()->has('url.intended'))
+        {
+            session(['url.intended' => url()->previous()]);
+        }
+        return view('auth.login');    
+    }
+
+    // redirect back to same page after logout
+    protected function loggedOut() {
+        return redirect()->back();
+    }
+
     /**
      * Create a new controller instance.
      *

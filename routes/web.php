@@ -49,6 +49,8 @@ Route::get('/products/{prod_id}', 'ProductsController@details')->name('products.
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show'); // pagina de client/profil
 Route::get('/profiles', 'ProfilesController@showDataRecords')->name('profile.showDataRecords');
 
+Route::get('/posts/search', 'PostsController@search');
+
 Route::resource('posts', 'PostsController');
 // alternativ
 // Route::post('/posts/{post_id}', 'PostsController@destroy')->name('profile.destroy');
@@ -62,3 +64,4 @@ Route::resource('posts', 'PostsController');
 // |        | PUT|PATCH | posts/{post}                              | posts.update            | App\Http\Controllers\PostsController@update                            | web          |
 // |        | GET|HEAD  | posts/{post}                              | posts.show              | App\Http\Controllers\PostsController@show                              | web          |
 // |        | GET|HEAD  | posts/{post}/edit                         | posts.edit              | App\Http\Controllers\PostsController@edit                              | web          |
+

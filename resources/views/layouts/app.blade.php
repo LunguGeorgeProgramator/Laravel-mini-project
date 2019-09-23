@@ -26,12 +26,12 @@
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('public/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('public/css/bootstraps.dataTable.css') }}" rel="stylesheet">
-    <script>
+    <!-- <script>
         jQuery(document).ready(function(){ // testez forma de apelare jquery in laravel
             console.log(jQuery( ".list-group" ).text());
             console.log($( ".list-group" ).text());
         });
-    </script>
+    </script> -->
 </head>
 <body>
    <!-- {{ '<p>test1</p>' }} --> <!-- {{ 'nu interpreteaza continut httml il face unicode si nu il vede browser-ul, ex: &lt;p&gt;test1&lt;/p&gt;' }} -->
