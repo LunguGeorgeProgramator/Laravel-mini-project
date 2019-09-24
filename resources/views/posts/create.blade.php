@@ -1,37 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <form method="POST" action="{{ route('posts.store') }}">
-                        @csrf
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Create Post</div>
+                <div class="card-body">
+                    <form method="post" action="{{ route('post.store') }}">
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">Post title.</label>
-                            <input type="title" class="form-control" name="title" id="FormControlInput" value="{{ old('title') }}" placeholder="Post title" />
-                            @error('title')
-                                <span class="text-danger">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                            @csrf
+                            <label class="label">Post Title: </label>
+                            <input type="text" name="title" class="form-control" required/>
                         </div>
                         <div class="form-group">
-                            <label for="FormControlTextarea">Post description.</label>
-                            <textarea class="form-control" name="description" id="FormControlTextarea" rows="3" placeholder="Post description.">{{ old('description') }}</textarea>
-                            @error('description')
-                                <span class="text-danger">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                            <label class="label">Post Body: </label>
+                            <textarea name="body" rows="10" cols="30" class="form-control" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-success" />
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
- 
 @endsection

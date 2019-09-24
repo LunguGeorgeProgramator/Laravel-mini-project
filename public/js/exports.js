@@ -86,6 +86,10 @@ function buildList(json, baseUrl){
         html +=     '<p class="card-text" >'+element.description+'</p>';
         html +=     '<a href="'+baseUrl+'/'+element.id+'" class="btn btn-primary">Read More →</a>'
         html +=     '</div>';
+        html +=     '<div class="card-footer text-muted">';
+        html +=     '   Posted on '+element.created_at+' by';
+        html +=     '   <a href="http://georgeldev.ro/test_project/profile/'+element.user_id+'">View profile.</a>';
+        html +=     '</div>';
         html +=     '</div>';
     });
     html +=     '</div>';

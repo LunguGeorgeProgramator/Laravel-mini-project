@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\User;
+use App\Comment;
+// use App\Http\Controllers\CommentsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 // use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
@@ -76,8 +79,7 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        // dd(Post::findOrFail($post->id));;
-        return view('posts.show', ['post' => $post, 'logged' => Auth::check()]);
+        return view('posts.show', ['post' => $post, 'logged' => Auth::check(), 'comments' => $post->comments]);
     }
 
     /**
@@ -131,6 +133,6 @@ class PostsController extends Controller
                         ->orWhere('description', 'like', '%'.$query.'%')
                         ->paginate(5);
 		$results->withPath('?query='.$query);
-        return $results;
+        return $results; 
     }
 }

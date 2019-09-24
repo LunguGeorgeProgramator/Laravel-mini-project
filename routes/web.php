@@ -65,3 +65,9 @@ Route::resource('posts', 'PostsController');
 // |        | GET|HEAD  | posts/{post}                              | posts.show              | App\Http\Controllers\PostsController@show                              | web          |
 // |        | GET|HEAD  | posts/{post}/edit                         | posts.edit              | App\Http\Controllers\PostsController@edit                              | web          |
 
+Route::post('/reply/store', 'CommentsController@replyStore')->name('comments.reply');
+
+Route::post('/coments', 'CommentsController@store')->name('comments.store');
+// Route::resource('comments', 'CommentsController');
+
+

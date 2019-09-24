@@ -5,22 +5,21 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Post extends Model
+class Comment extends Model
 {
-
     use SoftDeletes;
 
-    protected $fillable = [
-        'title', 'description', 'user_id',
+    Protected $fillable = [
+        'message', 
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-    
-    public function comments()
+
+    public function replies()
     {
-        return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
+        return $this->hasMany(Comment::class, 'parent_id');
     }
 }

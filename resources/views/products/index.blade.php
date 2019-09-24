@@ -42,10 +42,10 @@
 </div>
 
 <script type="module">
-    import { ajax_call } from '{{ asset('public/js/exports.js') }}';
+    import { categoryObject } from '{{ asset('js/exports.js') }}';
     // console.log(categoryObject); // call js content for this page
     @if ($errors->any())
-        ajax_call();
+        categoryObject.popErrorMessage('{{ implode('', $errors->all()) }}');
     @endif
 </script>
 
