@@ -2,6 +2,7 @@
 
 
 1. Clone project
+
 - create storage directory and storage/app, storage/cache, storage/framework & storage/logs directories
 - chmod -R 777 storage
 - chmod -R 777 bootstrap/cache
@@ -16,6 +17,7 @@
 - php artisan migrate:refresh --seed
 
 2. How to install
+
 - cd /data/www/{username}
 - php /usr/bin/composer global require "laravel/installer" (if Laravel isn’t installed)
 - php /usr/bin/composer create-project --prefer-dist laravel/laravel {project_name}  (. install in cur. folder) 
