@@ -1,7 +1,7 @@
 # Laravel-mini-project
 
 
-1. Clone project
+Clone project
 
 - create storage directory and storage/app, storage/cache, storage/framework & storage/logs directories
 - chmod -R 777 storage
@@ -16,7 +16,7 @@
 - copy-paste .htaccess & .htpasswd (if it's necessary)
 - php artisan migrate:refresh --seed
 
-2. How to install
+How to install
 
 - cd /data/www/{username}
 - php /usr/bin/composer global require "laravel/installer" (if Laravel isn’t installed)
