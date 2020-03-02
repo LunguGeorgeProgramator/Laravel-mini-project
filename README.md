@@ -1,5 +1,6 @@
 # Laravel-mini-project
 
+This project is a mini shop catalog online for products and categories. There is a login system present but no shop cart.
 
 Clone project
 
